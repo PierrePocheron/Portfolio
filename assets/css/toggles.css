@@ -1,0 +1,181 @@
+
+  /* Dark Mode Toggle Switch */
+  .switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333333;
+    transition: .4s;
+    border-radius: 30px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Added shadow */
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 3D effect */
+  }
+
+  .sun svg {
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    transition: all .4s ease;
+  }
+
+  .moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    transition: all .4s ease;
+  }
+
+  .input:checked + .slider {
+    background-color: #575757;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .input:checked + .slider:before {
+    transform: translateX(30px);
+    background-color: #f0f0f0; /* Subtle change for better visibility */
+  }
+
+  .input:focus + .slider {
+    box-shadow: 0 0 5px #183153;
+  }
+
+  /* Sun Rotation Animation */
+  .sun svg {
+    animation: rotate 15s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Moon Tilt Animation */
+  .moon svg {
+    animation: tilt 5s linear infinite;
+  }
+
+  @keyframes tilt {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  /* Language Toggle Switch */
+  .switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+    margin-left: 10px;
+  }
+
+  .input-lang {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider-lang {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333333;
+    transition: .4s;
+    border-radius: 30px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .slider-lang:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .en {
+    position: absolute;
+    top: 5px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+  }
+
+  .fr {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    transition: all .4s ease;
+  }
+
+  .input-lang:checked + .slider-lang {
+    background-color: #575757;
+  }
+
+  .input-lang:checked + .slider-lang:before {
+    transform: translateX(30px);
+  }
